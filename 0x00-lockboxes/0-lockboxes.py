@@ -11,9 +11,12 @@ def canUnlockAll(boxes):
     while stack:
         box = stack.pop()
         for key in boxes[box]:
-            if not openedBoxes[key]:
-                openedBoxes[key] = True
-                stack.append(key)
+            try:
+                if not openedBoxes[key]:
+                    openedBoxes[key] = True
+                    stack.append(key)
+            except IndexError:
+                pass
         if all(openedBoxes):
             return True
 
