@@ -24,7 +24,7 @@ int is_palindrome(listint_t **head)
 		copy = copy->next;
 	}
 	if (size == 1)
-		return (0);
+		return (1);
 	stack = (int *)malloc(sizeof(int) * size);
 	while (rabbit != NULL)
 	{
