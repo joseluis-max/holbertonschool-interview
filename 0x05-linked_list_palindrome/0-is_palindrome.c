@@ -28,6 +28,8 @@ int is_palindrome(listint_t **head)
 	{
 		stack[j] = turtle->n;
 		j++;
+		if (turtle->next == NULL)
+			return (1);
 		turtle = turtle->next;
 		if (rabbit->next == NULL)
 			break;
