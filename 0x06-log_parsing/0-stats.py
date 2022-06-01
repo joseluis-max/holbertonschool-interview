@@ -24,4 +24,4 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         print("File size: {:d}".format(sum))
         for key in sorted(metrics):
-            print(f"{key}: {metrics[key]}")
+            print("{}: {}".format(key, metrics[key]))
