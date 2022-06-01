@@ -3,7 +3,7 @@
 import sys
 
 if __name__ == "__main__":
-    counter = 0
+    counter = 1
     sum = 0
     metrics = {}
     try:
@@ -15,12 +15,11 @@ if __name__ == "__main__":
                 metrics[line[-2]] += 1
             except KeyError:
                 metrics[line[-2]] = 1
-            counter += 1
-            if counter == 10:
-                counter = 0
+            if counter % 10 == 0:
                 print("File size: {:d}".format(sum))
                 for key in sorted(metrics):
                     print("{}: {}".format(key, metrics[key]))
+            counter += 1
     except KeyboardInterrupt:
         print("File size: {:d}".format(sum))
         for key in sorted(metrics):
