@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-''' Computes metrics:'''
-
+"""Computes metrics"""
 import sys
 
 if __name__ == "__main__":
