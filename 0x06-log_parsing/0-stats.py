@@ -23,6 +23,6 @@ if __name__ == "__main__":
     except Exception:
         pass
     finally:
-        print("File size: {:d}".format(sum))
+        print("File size: {}".format(sum))
         for key in sorted(metrics):
             print("{}: {}".format(key, metrics[key]))
