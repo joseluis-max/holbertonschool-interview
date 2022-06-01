@@ -11,7 +11,7 @@ if __name__ == "__main__":
             line = line.rstrip()
             line = line.split(" ")
             sum += int(line[-1])
-            code = line[-2]
+            code = int(line[-2])
             if code in metrics:
                 metrics[code] += 1
             if counter % 10 == 0:
