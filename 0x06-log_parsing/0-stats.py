@@ -20,7 +20,7 @@ if __name__ == "__main__":
                 counter = 0
                 print("File size: {:d}".format(sum))
                 for key in sorted(metrics):
-                    print(f"{key}: {metrics[key]}")
+                    print("{}: {}".format(key, metrics[key]))
     except KeyboardInterrupt:
         print("File size: {:d}".format(sum))
         for key in sorted(metrics):
