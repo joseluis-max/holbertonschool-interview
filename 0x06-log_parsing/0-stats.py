@@ -8,7 +8,7 @@ if __name__ == "__main__":
     metrics = {200: 0, 301: 0, 400: 0, 401: 0, 403: 0, 404: 0, 405: 0, 500: 0}
     try:
         for line in sys.stdin:
-            line = line.rstrip()
+            # line = line.rstrip()
             line = line.split(" ")
             sum += int(line[-1])
             code = int(line[-2])
