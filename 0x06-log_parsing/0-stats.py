@@ -13,7 +13,7 @@ try:
         line = line.rstrip()
         line = line.split(" ")
         sum += int(line[-1])
-        try: 
+        try:
             metrics[line[-2]] += 1
         except KeyError:
             metrics[line[-2]] = 1
