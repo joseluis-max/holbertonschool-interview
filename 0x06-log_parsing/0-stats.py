@@ -17,7 +17,7 @@ if __name__ == "__main__":
             if counter % 10 == 0:
                 print("File size: {}".format(sum))
                 for key, value in sorted(metrics.items()):
-                    if value:
+                    if (value):
                         print("{}: {}".format(key, value))
             counter += 1
     except Exception:
@@ -25,5 +25,5 @@ if __name__ == "__main__":
     finally:
         print("File size: {}".format(sum))
         for key, value in sorted(metrics.items()):
-            if value:
+            if (value):
                 print("{}: {}".format(key, value))
