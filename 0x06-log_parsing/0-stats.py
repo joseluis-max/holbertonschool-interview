@@ -16,11 +16,13 @@ if __name__ == "__main__":
             except KeyError:
                 metrics[line[-2]] = 1
             if counter % 10 == 0:
-                print("File size: {:d}".format(sum))
+                print("File size: {}".format(sum))
                 for key in sorted(metrics):
                     print("{}: {}".format(key, metrics[key]))
             counter += 1
-    except KeyboardInterrupt:
+    except Exception:
+        pass
+    finally:
         print("File size: {:d}".format(sum))
         for key in sorted(metrics):
             print("{}: {}".format(key, metrics[key]))
