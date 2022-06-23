@@ -12,7 +12,9 @@ def countOnes(num):
             break
     return count
 
+
 def validUTF8(data):
+    """ validaUTF8 """
     count = 0
     for d in data:
         if not count:
