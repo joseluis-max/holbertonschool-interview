@@ -84,7 +84,8 @@ int slide_line(int *line, size_t size, int direction)
 				line[ii - 1] *= 2;
 				line[ii - 2] = 0;
 			}
-			else if (line[ii - 2] == line[ii - 3]) {
+			else if (line[ii - 2] == line[ii - 3])
+			{
 				line[ii - 2] *= 2;
 				line[ii - 3] = 0;
 			}
