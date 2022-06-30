@@ -23,6 +23,7 @@ void swap(int *line, size_t i, size_t j)
 void order(int *line, size_t size, int direction)
 {
 	size_t i = 0, j = 0;
+	int jj = 0;
 	int ii;
 
 	if (direction)
@@ -31,11 +32,11 @@ void order(int *line, size_t size, int direction)
 		{
 			if (line[ii] == 0)
 			{
-				for (j = ii - 1; j > 0; j--)
+				for (jj = ii - 1; jj >= 0; jj--)
 				{
-					if (line[j] != 0)
+					if (line[jj] != 0)
 					{
-						swap(line, ii, j);
+						swap(line, ii, jj);
 						break;
 					}
 				}
@@ -82,7 +83,8 @@ int slide_line(int *line, size_t size, int direction)
 			{
 				line[ii - 1] *= 2;
 				line[ii - 2] = 0;
-			} else if (line[ii - 2] == line[ii - 3]) {
+			}
+			else if (line[ii - 2] == line[ii - 3]) {
 				line[ii - 2] *= 2;
 				line[ii - 3] = 0;
 			}
@@ -96,6 +98,11 @@ int slide_line(int *line, size_t size, int direction)
 			{
 				line[i] *= 2;
 				line[i + 1] = 0;
+			}
+			else if (line[i + 1] == line[i + 2])
+			{
+				line[i + 1] *= 2;
+				line[i + 2] = 0;
 			}
 		}
 	}
