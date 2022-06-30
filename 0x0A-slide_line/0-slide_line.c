@@ -1,0 +1,99 @@
+#include "slide_line.h"
+/**
+ * swap - swaped numbers position
+ * @line: array represent a line game
+ * @i: init position
+ * @j: end position
+ */
+void swap(int *line, size_t i, size_t j)
+{
+	int tmp = 0;
+
+	tmp = line[i];
+	line[i] = line[j];
+	line[j] = tmp;
+}
+
+/**
+ * order - put zeros to the end of the line
+ * @line: array represent a line game
+ * @direction: direction for make the merge
+ * @size: size of line
+ */
+void order(int *line, size_t size, int direction)
+{
+	size_t i = 0, j = 0;
+
+	if (direction)
+	{
+		for (i = 0; i < size; i++)
+		{
+			if (line[i] == 0)
+			{
+				for (j = i + 1; j < size; j++)
+				{
+					if (line[j] != 0)
+					{
+						swap(line, i, j);
+						break;
+					}
+				}
+			}
+		}
+	}
+	else
+	{
+		for (i = size - 1; i > 0; i--)
+		{
+			if (line[i] == 0)
+			{
+				for (j = i - 1; j > 0; j--)
+				{
+					if (line[j] != 0)
+					{
+						swap(line, i, j);
+						break;
+					}
+				}
+			}
+		}
+	}
+}
+/**
+ * slide_line - slide and merge array of numbers
+ * @line: array represent a line game
+ * @direction: direction for make the merge
+ * @size: size of line
+ * Return: 1 success, or 0 failure
+ */
+int slide_line(int *line, size_t size, int direction)
+{
+	size_t i = 0;
+
+	/* order numbers in the right */
+	order(line, size, direction);
+	if (direction)
+	{
+		for (i = 0; i < size; i += 2)
+		{
+			if (line[i] == line[i + 1])
+			{
+				line[i] *= 2;
+				line[i + 1] = 0;
+			}
+		}
+	}
+	else
+	{
+		for (i = size - 1; i > 0; i = i - 2)
+		{
+			if (line[i] == line[i - 1])
+			{
+				line[i] *= 2;
+				line[i - 1] = 0;
+			}
+		}
+	}
+	order(line, size, direction);
+	return (1);
+}
