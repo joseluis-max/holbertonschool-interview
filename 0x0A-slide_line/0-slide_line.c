@@ -23,18 +23,19 @@ void swap(int *line, size_t i, size_t j)
 void order(int *line, size_t size, int direction)
 {
 	size_t i = 0, j = 0;
+	int ii;
 
 	if (direction)
 	{
-		for (i = size - 1; i > 0; i--)
+		for (ii = (int)size - 1; ii > 0; ii--)
 		{
-			if (line[i] == 0)
+			if (line[ii] == 0)
 			{
-				for (j = i - 1; j > 0; j--)
+				for (j = ii - 1; j > 0; j--)
 				{
 					if (line[j] != 0)
 					{
-						swap(line, i, j);
+						swap(line, ii, j);
 						break;
 					}
 				}
