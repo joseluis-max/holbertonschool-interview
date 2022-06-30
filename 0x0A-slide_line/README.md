@@ -13,3 +13,12 @@ If it is something else, the function must fail
 Both macros SLIDE_LEFT and SLIDE_RIGHT must be defined in slide_line.h
 Your function must return 1 upon success, or 0 upon failure
 You are not allowed to allocate memory dynamically (malloc, calloc, …)
+
+./0-slide_line L 2 2 0 0
+./0-slide_line L 2 2 0 0 0 0 0 2 0 0 0 2 0 4
+./0-slide_line R 2 2 2 2
+./0-slide_line R 2 2 2 2 2
+./0-slide_line L 2 4 8 16
+./0-slide_line R 2 4 8 16
+./0-slide_line R 4 4 8 16
+

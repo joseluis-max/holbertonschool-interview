@@ -68,11 +68,23 @@ void order(int *line, size_t size, int direction)
  */
 int slide_line(int *line, size_t size, int direction)
 {
-	size_t i = 0;
+	size_t i;
+	int ii;
 
 	/* order numbers in the right */
 	order(line, size, direction);
 	if (direction)
+	{
+		for (ii = (int)size; ii > 0; ii -= 2)
+		{
+			if (line[ii - 1] == line[ii - 2])
+			{
+				line[ii - 1] *= 2;
+				line[ii - 2] = 0;
+			}
+		}
+	}
+	else
 	{
 		for (i = 0; i < size; i += 2)
 		{
@@ -80,17 +92,6 @@ int slide_line(int *line, size_t size, int direction)
 			{
 				line[i] *= 2;
 				line[i + 1] = 0;
-			}
-		}
-	}
-	else
-	{
-		for (i = size - 1; i > 0; i = i - 2)
-		{
-			if (line[i] == line[i - 1])
-			{
-				line[i] *= 2;
-				line[i - 1] = 0;
 			}
 		}
 	}
