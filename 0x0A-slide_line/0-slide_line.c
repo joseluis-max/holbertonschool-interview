@@ -26,11 +26,11 @@ void order(int *line, size_t size, int direction)
 
 	if (direction)
 	{
-		for (i = 0; i < size; i++)
+		for (i = size - 1; i > 0; i--)
 		{
 			if (line[i] == 0)
 			{
-				for (j = i + 1; j < size; j++)
+				for (j = i - 1; j > 0; j--)
 				{
 					if (line[j] != 0)
 					{
@@ -43,11 +43,11 @@ void order(int *line, size_t size, int direction)
 	}
 	else
 	{
-		for (i = size - 1; i > 0; i--)
+		for (i = 0; i < size; i++)
 		{
 			if (line[i] == 0)
 			{
-				for (j = i - 1; j > 0; j--)
+				for (j = i + 1; j < size; j++)
 				{
 					if (line[j] != 0)
 					{

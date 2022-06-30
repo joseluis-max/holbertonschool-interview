@@ -21,4 +21,5 @@ You are not allowed to allocate memory dynamically (malloc, calloc, …)
 ./0-slide_line L 2 4 8 16
 ./0-slide_line R 2 4 8 16
 ./0-slide_line R 4 4 8 16
+./0-slide_line R 4 4 8 16 32
 
