@@ -1,6 +1,5 @@
 #include "menger.h"
 
-
 /**
  * menger - draw 2D Menger Sponge
  * @level: Menger sponge level
