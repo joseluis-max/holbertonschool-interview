@@ -1,7 +1,5 @@
 #include "menger.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
+
 
 /**
  * menger - draw 2D Menger Sponge
